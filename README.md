@@ -12,3 +12,12 @@
 *https://pandas.pydata.org/pandas-docs/stable/missing_data.html
 
 *https://chrisalbon.com/python/pandas_missing_data.html
+
+*df.fillna(0) returns a new dataframe; it does not alter df.
+
+So either use
+
+df = df.fillna(0)           # assigns df to a new dataframe
+or
+
+df.fillna(0, inplace=True)  # modifies df inplace 
