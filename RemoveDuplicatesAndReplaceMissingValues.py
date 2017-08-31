@@ -18,6 +18,11 @@ import pandas as pd
 def RmvDuplicates(df):
     df=df.drop_duplicates(subset=['Year', 'Month','DayofMonth','Carrier','OriginAirportID','DestAirportID','CRSDepTime','CRSArrTime'], keep='first')
     return df
+def ReplaceMissing(df):
+    df['DepDelay'].fillna(0)
+    df['ArrDelay'].fillna(0)
+    return df
+    
 def azureml_main(dataframe ):
 
     # Execution logic goes here
@@ -30,4 +35,6 @@ def azureml_main(dataframe ):
     # import mymodule
     
     # Return value must be of a sequence of pandas.DataFrame
-    return RmvDuplicates(dataframe)
+    dfrmv=RmvDuplicates(dataframe)
+    dfrpm=ReplaceMissing(dfrmv)
+    return dfrpm
