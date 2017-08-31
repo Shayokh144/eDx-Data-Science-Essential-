@@ -12,9 +12,9 @@ Created on Wed Aug 30 17:51:35 2017
 import pandas as pd
 
 
-def joinOriginAndDestination(FlightDelaysData , AirportCodesDataset):# join on 	OriginAirportID	,airport_id
+def joinOriginAndDestination(FlightDelaysData , AirportCodesDataset):
     
-    df=pd.merge(FlightDelaysData, AirportCodesDataset, how = 'left',left_on ='OriginAirportID',right_on ='airport_id')
+    df=pd.merge(FlightDelaysData, AirportCodesDataset, how = 'left',left_on ='OriginAirportID',right_on ='airport_id')# join on 	OriginAirportID	,airport_id
     df=df.drop(['airport_id'],axis=1)
     df=df.rename(columns={'city': 'origin_city', 'state': 'origin_state','name':'origin_name'})
     df_destination=pd.merge(df, AirportCodesDataset, how = 'left',left_on ='DestAirportID',right_on ='airport_id')
