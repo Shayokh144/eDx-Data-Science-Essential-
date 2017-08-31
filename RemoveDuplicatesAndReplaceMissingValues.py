@@ -19,8 +19,8 @@ def RmvDuplicates(df):
     df=df.drop_duplicates(subset=['Year', 'Month','DayofMonth','Carrier','OriginAirportID','DestAirportID','CRSDepTime','CRSArrTime'], keep='first')
     return df
 def ReplaceMissing(df):
-    df['DepDelay'].fillna(0)
-    df['ArrDelay'].fillna(0)
+    df['DepDelay']=df['DepDelay'].fillna(0)
+    df['ArrDelay']=df['ArrDelay'].fillna(0)
     return df
     
 def azureml_main(dataframe ):
