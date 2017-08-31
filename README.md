@@ -6,7 +6,9 @@
 # pandas drop duplicate: 
 *https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.drop_duplicates.html
 
-# handlin missing: 
+# handling missing data: 
 *https://www.oreilly.com/learning/handling-missing-data
 
 *https://pandas.pydata.org/pandas-docs/stable/missing_data.html
+
+*https://chrisalbon.com/python/pandas_missing_data.html
