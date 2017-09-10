@@ -13,11 +13,9 @@
 
 * https://chrisalbon.com/python/pandas_missing_data.html
 
-* df.fillna(0) returns a new dataframe; it does not alter df.
-
-So either use
-
-df = df.fillna(0)           # assigns df to a new dataframe
-or
-
-df.fillna(0, inplace=True)  # modifies df inplace 
+* df.fillna(0) returns a new dataframe; it does not alter df. So either use:
+    * dataframe['col_xyz'] = dataframe['col_xyz'].fillna(0)           #  for exact column
+    * dataframe = dataframe.fillna(0)                                 # for all column     
+    * or
+    * dataframe['col_name'].fillna(0, inplace=True)                   # for exact column
+    * dataframe.fillna(0, inplace=True)                               # for all column
